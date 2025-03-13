@@ -13,7 +13,7 @@ app.get("/", (req:any, res:any) => {
     return res.send("Hey It's working.... 🙌")
 });
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000" }))
 
 app.use("/api", router)
 

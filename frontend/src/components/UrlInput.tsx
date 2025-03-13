@@ -49,7 +49,7 @@ export default function UrlChecker() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-black shadow-lg rounded-lg">
+    <div className="max-w-2xl mx-auto p-6 bg-black shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold mb-4">Check Website URL</h2>
 
       <input
@@ -70,21 +70,25 @@ export default function UrlChecker() {
       {error && <p className="text-red-500 mt-3">{error}</p>}
 
       {data && (
-        <div className="mt-4 p-4 border rounded bg-gray-100">
+        <div className="mt-4 p-4 border rounded bg-black">
           <h3 className="text-lg font-semibold">Results:</h3>
+          <p><strong>URL:</strong> {data.url}</p>
           <p><strong>Domain:</strong> {data.domain}</p>
+          <p><strong>Domain Age:</strong> {data.domainAge} days</p>
           <p><strong>SSL:</strong> {data.hasSSL ? "✅ Secure" : "❌ Not Secure"}</p>
           <p><strong>Blacklisted:</strong> {data.isBlacklisted ? "⚠️ Yes" : "✅ No"}</p>
           <p><strong>Risk Score:</strong> {data.riskScore}</p>
+          <p><strong>Hidden Redirects:</strong> {data.hasHiddenRedirects ? "⚠️ Yes" : "✅ No"}</p>
+          <p><strong>Malicious Scripts:</strong> {data.hasMaliciousScripts ? "⚠️ Yes" : "✅ No"}</p>
           <p>
             <strong>Status:</strong>{" "}
             <span
               className={`px-2 py-1 rounded ${
                 data.status === "SAFE"
-                  ? "bg-green-500 text-white"
+                  ? "bg-green-500 text-black"
                   : data.status === "SUSPICIOUS"
                   ? "bg-yellow-500 text-black"
-                  : "bg-red-500 text-white"
+                  : "bg-red-500 text-black"
               }`}
             >
               {data.status}
