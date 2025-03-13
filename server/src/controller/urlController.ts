@@ -4,12 +4,13 @@ import Validator from '../services/validators.js';
 import RiskCalculator from '../services/RiskCalculator.js';
 import WhoisService from '../services/whoisService.js';
 import GoogleSafeBrowsingService from '../services/googleSafeBrowsingService.js';
-import PhishTankService from '../services/phishTankService.js';
+import PhishTankService from '../services/URLScanService.js';
 import SslService from '../services/SslService.js';
 import ContentSimilarityService from '../services/contentSimilarityService.js';
 import RedirectService from '../services/redirectService.js';
 import ScriptAnalysisService from '../services/scriptAnalysisService.js';
 import prisma from '../config/db.config.js';
+import URLScanService from '../services/URLScanService.js';
 
 class CheckUrl {
     static async checkUrl(req: Request, res: Response){
@@ -50,7 +51,7 @@ class CheckUrl {
         ] = await Promise.all([
             WhoisService.checkDomain(domain),
             GoogleSafeBrowsingService.checkGoogleSafeBrowsing(url),
-            PhishTankService.checkPhishTank(url),
+            URLScanService.checkURL(url),
             SslService.checkSSL(domain),
             ContentSimilarityService.checkContentSimilarity(url),
             RedirectService.checkRedirects(url),
