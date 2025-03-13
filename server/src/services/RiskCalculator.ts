@@ -1,5 +1,5 @@
 
-class CalculateRiskScore {
+class RiskCalculator {
     static async calculateRiskScore(factors: any){
         let score = 0;
         if (factors.domainAge < 30) score += 30;
@@ -12,4 +12,4 @@ class CalculateRiskScore {
     };
 }
 
-export default CalculateRiskScore;
+export default RiskCalculator;

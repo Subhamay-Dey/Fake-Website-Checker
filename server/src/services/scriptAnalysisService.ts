@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class CheckMaliciousScripts {
+class ScriptAnalysisService {
     static async checkMaliciousScripts(url: string){
         try {
             const response = await axios.get(`https://www.virustotal.com/api/v3/urls/${encodeURIComponent(url)}`, {
@@ -17,4 +17,4 @@ class CheckMaliciousScripts {
     };
 }
 
-export default CheckMaliciousScripts;
+export default ScriptAnalysisService;

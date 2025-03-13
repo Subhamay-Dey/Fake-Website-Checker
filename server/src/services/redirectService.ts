@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class CheckRedirects {
+class RedirectService {
 
     static async checkRedirects(url: string){
         try {
@@ -16,4 +16,4 @@ class CheckRedirects {
     };
 }
 
-export default CheckRedirects;
+export default RedirectService;
