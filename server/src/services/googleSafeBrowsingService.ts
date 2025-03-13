@@ -15,7 +15,7 @@ interface SafeBrowsingResult {
   raw: GoogleSafeBrowsingResponse;
 }
 
-class CheckGoogleSafeBrowsing {
+class GoogleSafeBrowsingService {
 
     static async checkGoogleSafeBrowsing(url: string): Promise<SafeBrowsingResult>{
       try {
@@ -57,4 +57,4 @@ class CheckGoogleSafeBrowsing {
     };
 }
 
-export default CheckGoogleSafeBrowsing;
+export default GoogleSafeBrowsingService;

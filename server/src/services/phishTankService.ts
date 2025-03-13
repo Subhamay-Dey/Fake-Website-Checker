@@ -12,7 +12,7 @@ interface PhishTankResult {
   raw: PhishTankResponse;
 }
 
-class CheckPhishTank {
+class PhishTankService {
 
     static async checkPhishTank(url: string): Promise<PhishTankResult>{
       try {
@@ -45,4 +45,4 @@ class CheckPhishTank {
     };
 }
 
-export default CheckPhishTank;
+export default PhishTankService;

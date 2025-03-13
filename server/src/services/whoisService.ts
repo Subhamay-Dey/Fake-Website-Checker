@@ -14,7 +14,7 @@ interface WhoisResult {
   raw: WhoisResponse;
 }
 
-class CheckDomain {
+class WhoisService {
     static async checkDomain(domain: string): Promise<WhoisResult>{
       try {
         const response = await axios.get<WhoisResponse>('https://whoisapi.whoisxmlapi.com/api/v1', {
@@ -52,4 +52,4 @@ class CheckDomain {
     };
 }
 
-export default CheckDomain;
+export default WhoisService;

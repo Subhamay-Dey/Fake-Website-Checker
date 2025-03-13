@@ -9,7 +9,7 @@ interface SSLCheckResult {
   validTo?: string;
 }
 
-class CheckSSL {
+class SslService {
 
     static async checkSSL(domain: string): Promise<SSLCheckResult>{
       return new Promise((resolve) => {
@@ -64,3 +64,4 @@ class CheckSSL {
     };
 }
 
+export default SslService
