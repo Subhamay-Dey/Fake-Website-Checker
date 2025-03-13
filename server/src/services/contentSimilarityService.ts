@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class ContentSimilarityService {
-    async checkContentSimilarity(url: string){
+    static async checkContentSimilarity(url: string){
         try {
             const response = await axios.post('https://api.sightengine.com/1.0/check.json', {
                 url,
