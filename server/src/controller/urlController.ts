@@ -13,7 +13,7 @@ import prisma from '../config/db.config.js';
 import URLScanService from '../services/URLScanService.js';
 
 class CheckUrl {
-    static async checkUrl(req: Request, res: Response){
+    static async checkUrl(req: any, res: any){
       try {
         const { url } = req.body;
     
